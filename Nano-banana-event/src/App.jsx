@@ -1,6 +1,47 @@
 import './App.css'
+import { useState, useEffect } from 'react'
 
 function App() {
+  const [isJoinEnabled, setIsJoinEnabled] = useState(false)
+  const [timeUntilJoin, setTimeUntilJoin] = useState('')
+
+  // Target time: 3:45 PM IST on September 14, 2025
+  const targetDateTime = new Date('2025-09-14T15:45:00+05:30') // IST timezone
+
+  useEffect(() => {
+    const checkTime = () => {
+      const now = new Date()
+      const timeDiff = targetDateTime.getTime() - now.getTime()
+      
+      if (timeDiff <= 0) {
+        setIsJoinEnabled(true)
+        setTimeUntilJoin('')
+      } else {
+        setIsJoinEnabled(false)
+        // Calculate time remaining
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000)
+        
+        if (days > 0) {
+          setTimeUntilJoin(`${days}d ${hours}h ${minutes}m`)
+        } else if (hours > 0) {
+          setTimeUntilJoin(`${hours}h ${minutes}m ${seconds}s`)
+        } else {
+          setTimeUntilJoin(`${minutes}m ${seconds}s`)
+        }
+      }
+    }
+
+    // Check immediately
+    checkTime()
+    
+    // Update every second
+    const interval = setInterval(checkTime, 1000)
+    
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-300 container-safe">
@@ -87,14 +128,25 @@ function App() {
               </div>
               
               <div className="text-center">
-                <a
-                  href="https://www.gmeet.com/meet1234"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full text-lg font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg w-full block text-center"
-                >
-                  JOIN NOW
-                </a>
+                {isJoinEnabled ? (
+                  <a
+                    href="https://www.gmeet.com/meet1234"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full text-lg font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg w-full block text-center"
+                  >
+                    JOIN NOW
+                  </a>
+                ) : (
+                  <div className="bg-gray-400 text-gray-600 px-8 py-4 rounded-full text-lg font-bold w-full block text-center cursor-not-allowed">
+                    Join at 4 PM
+                    {timeUntilJoin && (
+                      <div className="text-sm mt-1">
+                        Opens in: {timeUntilJoin}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -181,14 +233,25 @@ function App() {
                 </div>
                 
                 <div className="mt-8 text-center">
-                  <a
-                    href="https://www.gmeet.com/meet1234"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full text-xl font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg w-full sm:w-auto block sm:inline-block text-center"
-                  >
-                    JOIN NOW
-                  </a>
+                  {isJoinEnabled ? (
+                    <a
+                      href="https://www.gmeet.com/meet1234"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full text-xl font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg w-full sm:w-auto block sm:inline-block text-center"
+                    >
+                      JOIN NOW
+                    </a>
+                  ) : (
+                    <div className="bg-gray-400 text-gray-600 px-8 py-4 rounded-full text-xl font-bold w-full sm:w-auto block sm:inline-block text-center cursor-not-allowed">
+                      Join at 4 PM
+                      {timeUntilJoin && (
+                        <div className="text-base mt-1">
+                          Opens in: {timeUntilJoin}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -310,14 +373,25 @@ function App() {
               <p className="text-lg md:text-lg">💻 <strong>Requirements:</strong> Laptop/smartphone with internet connection</p>
               <p className="text-lg md:text-lg">🆓 <strong>Event is FREE</strong> - No registration required</p>
             </div>
-            <a
-              href="https://www.gmeet.com/meet1234"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-black text-yellow-400 px-10 md:px-12 py-4 md:py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-800 transition-colors duration-300 banana-glow w-full sm:w-auto block sm:inline-block text-center"
-            >
-              JOIN NOW
-            </a>
+            {isJoinEnabled ? (
+              <a
+                href="https://www.gmeet.com/meet1234"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-black text-yellow-400 px-10 md:px-12 py-4 md:py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-800 transition-colors duration-300 banana-glow w-full sm:w-auto block sm:inline-block text-center"
+              >
+                JOIN NOW
+              </a>
+            ) : (
+              <div className="bg-gray-600 text-gray-300 px-10 md:px-12 py-4 md:py-4 rounded-full text-xl md:text-2xl font-bold w-full sm:w-auto block sm:inline-block text-center cursor-not-allowed">
+                Join at 4 PM
+                {timeUntilJoin && (
+                  <div className="text-lg md:text-xl mt-1">
+                    Opens in: {timeUntilJoin}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </section>
