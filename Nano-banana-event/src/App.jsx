@@ -1,5 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const [isJoinEnabled, setIsJoinEnabled] = useState(false)
@@ -413,6 +414,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   )
 }
