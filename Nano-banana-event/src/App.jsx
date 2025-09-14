@@ -80,7 +80,7 @@ function App() {
                   <span className="text-2xl mt-1">🗓️</span>
                   <div>
                     <p className="text-lg font-semibold text-gray-800">Date</p>
-                    <p className="text-base text-gray-600">Saturday, September 14, 2025</p>
+                    <p className="text-base text-gray-600">Sunday, September 14, 2025</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -199,7 +199,7 @@ function App() {
                       <span className="text-2xl">🗓️</span>
                       <div>
                         <p className="text-lg font-semibold text-gray-800">Date</p>
-                        <p className="text-gray-600">Saturday, September 14, 2025</p>
+                        <p className="text-gray-600">Sunday, September 14, 2025</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
