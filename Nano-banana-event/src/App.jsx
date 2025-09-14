@@ -131,7 +131,7 @@ function App() {
               <div className="text-center">
                 {isJoinEnabled ? (
                   <a
-                    href="https://www.gmeet.com/meet1234"
+                    href="https://meet.google.com/jxp-mvzw-mnr"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full text-lg font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg w-full block text-center"
@@ -237,7 +237,7 @@ function App() {
                 <div className="mt-8 text-center space-y-6">
                   {isJoinEnabled ? (
                     <a
-                      href="https://www.gmeet.com/meet1234"
+                      href="https://meet.google.com/jxp-mvzw-mnr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-full text-xl font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg w-full sm:w-auto block sm:inline-block text-center"
@@ -360,7 +360,7 @@ function App() {
             <div className="space-y-6">
               {isJoinEnabled ? (
                 <a
-                  href="https://www.gmeet.com/meet1234"
+                  href="https://meet.google.com/jxp-mvzw-mnr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-black text-yellow-400 px-10 md:px-12 py-4 md:py-4 rounded-full text-xl md:text-2xl font-bold hover:bg-gray-800 transition-colors duration-300 banana-glow w-full sm:w-auto block sm:inline-block text-center"
