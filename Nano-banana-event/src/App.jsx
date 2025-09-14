@@ -94,7 +94,7 @@ function App() {
                   <span className="text-2xl mt-1">🌐</span>
                   <div>
                     <p className="text-lg font-semibold text-gray-800">Venue</p>
-                    <p className="text-base text-gray-600">Virtual Workshop via www.gmeet.com/meet1234</p>
+                    <p className="text-base text-gray-600">Virtual Workshop</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
