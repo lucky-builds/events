@@ -101,7 +101,7 @@ function App() {
                   <span className="text-2xl mt-1">👨‍🏫</span>
                   <div>
                     <p className="text-lg font-semibold text-gray-800">Expert Facilitator</p>
-                    <p className="text-base text-gray-600">Leading Faculty Member from IIM Ahmedabad (AI Specialist)</p>
+                    <p className="text-base text-gray-600">Leading Faculty Member from IIM (AI Specialist)</p>
                   </div>
                 </div>
               </div>
@@ -220,7 +220,7 @@ function App() {
                       <span className="text-2xl">👨‍🏫</span>
                       <div>
                         <p className="text-lg font-semibold text-gray-800">Expert Facilitator</p>
-                        <p className="text-gray-600">Leading Faculty Member from IIM Ahmedabad (AI Specialist)</p>
+                        <p className="text-gray-600">Leading Faculty Member from IIM (AI Specialist)</p>
                       </div>
                     </div>
                   </div>
@@ -350,7 +350,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-3xl p-8 md:p-8 text-black backdrop-blur-sm shadow-lg">
               <h4 className="text-2xl md:text-2xl font-bold mb-6 md:mb-6">Expert Academic Perspective</h4>
-              <p className="text-lg md:text-lg leading-relaxed">Insights from IIM Ahmedabad faculty with cutting-edge research knowledge</p>
+              <p className="text-lg md:text-lg leading-relaxed">Insights from IIM faculty with cutting-edge research knowledge</p>
             </div>
             <div className="bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-3xl p-8 md:p-8 text-black backdrop-blur-sm shadow-lg">
               <h4 className="text-2xl md:text-2xl font-bold mb-6 md:mb-6">Practical Industry Applications</h4>
